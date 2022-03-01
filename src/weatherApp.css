@@ -1,0 +1,57 @@
+h5 {
+  font-size: 1rem;
+}
+ul {
+  list-style: none;
+}
+img {
+  width: 70px;
+}
+
+.container {
+  margin-top: 20px;
+  width: 50%;
+  border: solid 5px #800080;
+  border-radius: 20px;
+  padding: 20px;
+}
+.navbar {
+  padding-top: 20px;
+  display: inline-flex;
+}
+.btn {
+  border-color: purple;
+  color: purple;
+  margin: 0 5px;
+}
+.btn:hover {
+  background-color: purple;
+  color: #fff;
+}
+.cityName {
+  color: purple;
+  font-weight: bold;
+  font-size: 3rem;
+}
+.temp-city {
+  font-weight: 600;
+  font-size: 3rem;
+}
+.degree {
+  font-size: 1.5rem;
+  text-decoration: none;
+  position: relative;
+  right: 10px;
+  top: 15px;
+}
+.conditions {
+  color: purple;
+  font-weight: 400;
+  text-align: left;
+}
+.day {
+  font-weight: 700;
+}
+.weekdays {
+  text-align: center;
+}
