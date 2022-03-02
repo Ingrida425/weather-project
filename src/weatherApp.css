@@ -55,3 +55,9 @@ img {
 .weekdays {
   text-align: center;
 }
+.source {
+  display: block;
+  margin: 0 auto;
+  position: relative;
+  left: 400px;
+}
