@@ -8,9 +8,9 @@ img {
   width: 70px;
 }
 
-.container {
+.container-weather {
   margin-top: 20px;
-  width: 50%;
+  width: 760px;
   border: solid 5px #800080;
   border-radius: 20px;
   padding: 20px;
@@ -54,10 +54,4 @@ img {
 }
 .weekdays {
   text-align: center;
-}
-.source {
-  display: block;
-  margin: 0 auto;
-  position: relative;
-  left: 400px;
 }
