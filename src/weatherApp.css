@@ -7,10 +7,13 @@ ul {
 img {
   width: 70px;
 }
-
+.container {
+  margin: 0 auto;
+  max-width: 760px;
+}
 .container-weather {
-  margin-top: 20px;
-  width: 760px;
+  margin: 20px auto;
+  max-width: 760px;
   border: solid 5px #800080;
   border-radius: 20px;
   padding: 20px;
