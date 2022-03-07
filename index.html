@@ -49,10 +49,15 @@
         </div>
 
         <div class="row second">
-          <h1 class="col-6 cityName" id="city-name">
-            <span class="city-icon"></span>
-          </h1>
-          <div class="col-2 temp-city" id="current-temp">-4</div>
+          <div class="col-1 clearfix float-left">
+            <img
+              src="http://openweathermap.org/img/wn/10d@2x.png"
+              alt="weather icon"
+              id="city-icon"
+            />
+          </div>
+          <h1 class="col-6 cityName" id="city-name"></h1>
+          <div class="col-2 temp-city" id="current-temp"></div>
           <div class="col">
             <span class="degree">
               <a href="#" id="celsius-link">℃ </a> /
@@ -64,9 +69,9 @@
           <div class="col"><h5 id="last-updated">Last updated:</h5></div>
           <div class="col-3 float-sm-end">
             <ul class="conditions">
-              <li>Real feel: <span id="real-feel">-5</span> ℃</li>
-              <li>Humidity: <span id="humidity">74</span> %</li>
-              <li>Wind: <span id="wind">14</span> km/h</li>
+              <li>Real feel: <span id="real-feel"></span> ℃</li>
+              <li>Humidity: <span id="humidity"></span> %</li>
+              <li>Wind: <span id="wind"></span> km/h</li>
             </ul>
           </div>
         </div>

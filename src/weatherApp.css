@@ -7,12 +7,19 @@ ul {
 img {
   width: 70px;
 }
+#city-icon {
+  margin-right: 20px;
+  float: left;
+  height: 60px;
+  width: 60px;
+}
 .container {
   margin: 0 auto;
   max-width: 760px;
 }
 .container-weather {
-  margin: 20px auto;
+  margin: 0 auto;
+  margin-top: 20px;
   max-width: 760px;
   border: solid 5px #800080;
   border-radius: 20px;
