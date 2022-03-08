@@ -23,22 +23,6 @@ function updateTime() {
 }
 updateTime();
 
-function showCelsius(event) {
-  event.preventDefault();
-  let changedTempC = document.querySelector("#current-temp");
-  changedTempC.innerHTML = "-4";
-}
-let celsius = document.querySelector("#celsius-link");
-celsius.addEventListener("click", showCelsius);
-
-function showFahrenheit(event) {
-  event.preventDefault();
-  let changedTempF = document.querySelector("#current-temp");
-  changedTempF.innerHTML = "24.8";
-}
-let fahrenheit = document.querySelector("#fahrenheit-link");
-fahrenheit.addEventListener("click", showFahrenheit);
-
 //-----------------Current location button:-----------------
 function showCurrentWeather(response) {
   console.log(response.data);
@@ -78,6 +62,7 @@ function showTemperature(response) {
   document.querySelector("#current-temp").innerHTML = Math.round(
     response.data.main.temp
   );
+  celsiusTemp = response.data.main.temp;
   document.querySelector("#city-name").innerHTML = response.data.name;
   document.querySelector("#humidity").innerHTML = response.data.main.humidity;
   document.querySelector("#real-feel").innerHTML = Math.round(
@@ -106,5 +91,17 @@ function getTemperature(event) {
 }
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", getTemperature);
+
+function displayFahrenheit(event) {
+  event.preventDefault();
+  let fahrenheitTemp = (celsiusTemp * 9) / 5 + 32;
+  let temperature = document.querySelector("#current-temp");
+  temperature.innerHTML = Math.round(fahrenheitTemp);
+}
+
+let celsiusTemp = null;
+
+let fahrenheitLink = document.querySelector("#fahrenheit-link");
+fahrenheitLink.addEventListener("click", displayFahrenheit);
 
 search("Vilnius");
