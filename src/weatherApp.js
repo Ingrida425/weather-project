@@ -94,12 +94,16 @@ form.addEventListener("submit", getTemperature);
 
 function displayFahrenheit(event) {
   event.preventDefault();
+  celsiusLink.classList.remove("active");
+  fahrenheitLink.classList.add("active");
   let fahrenheitTemp = (celsiusTemp * 9) / 5 + 32;
   let temperature = document.querySelector("#current-temp");
   temperature.innerHTML = Math.round(fahrenheitTemp);
 }
 function displayCelsius(event) {
   event.preventDefault();
+  celsiusLink.classList.add("active");
+  fahrenheitLink.classList.remove("active");
   let temperature = document.querySelector("#current-temp");
   temperature.innerHTML = Math.round(celsiusTemp);
 }

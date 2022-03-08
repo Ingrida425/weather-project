@@ -59,8 +59,9 @@ img {
 #fahrenheit-link {
   text-decoration: none;
 }
-.degree .active {
+.active {
   color: black;
+  cursor: default;
 }
 .conditions {
   color: purple;
