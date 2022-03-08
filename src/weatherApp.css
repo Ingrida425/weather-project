@@ -48,11 +48,19 @@ img {
   font-size: 3rem;
 }
 .degree {
-  font-size: 1.5rem;
-  text-decoration: none;
+  font-size: 1.3rem;
   position: relative;
-  right: 10px;
+  right: 25px;
   top: 15px;
+}
+#celsius-link {
+  text-decoration: none;
+}
+#fahrenheit-link {
+  text-decoration: none;
+}
+.degree .active {
+  color: black;
 }
 .conditions {
   color: purple;

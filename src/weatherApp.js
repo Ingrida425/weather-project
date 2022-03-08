@@ -98,10 +98,17 @@ function displayFahrenheit(event) {
   let temperature = document.querySelector("#current-temp");
   temperature.innerHTML = Math.round(fahrenheitTemp);
 }
-
+function displayCelsius(event) {
+  event.preventDefault();
+  let temperature = document.querySelector("#current-temp");
+  temperature.innerHTML = Math.round(celsiusTemp);
+}
 let celsiusTemp = null;
 
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
 fahrenheitLink.addEventListener("click", displayFahrenheit);
+
+let celsiusLink = document.querySelector("#celsius-link");
+celsiusLink.addEventListener("click", displayCelsius);
 
 search("Vilnius");
