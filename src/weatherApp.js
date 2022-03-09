@@ -77,6 +77,8 @@ function showTemperature(response) {
     "src",
     `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
+  let weatherDescription = document.querySelector("#description");
+  weatherDescription.innerHTML = response.data.weather[0].description;
 }
 function search(city) {
   let apiKey = "72ed8a85e3f275bf8313543794566f89";

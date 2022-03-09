@@ -1,5 +1,6 @@
-h5 {
+#last-updated {
   font-size: 1rem;
+  font-weight: bold;
 }
 ul {
   list-style: none;
@@ -73,4 +74,8 @@ img {
 }
 .weekdays {
   text-align: center;
+}
+#description:first-letter {
+  text-transform: capitalize;
+  color: purple;
 }
