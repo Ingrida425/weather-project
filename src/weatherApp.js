@@ -92,7 +92,7 @@ function getTemperature(event) {
 }
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", getTemperature);
-
+//------------------changing Celsius to Fahrenheit:----------------------
 function displayFahrenheit(event) {
   event.preventDefault();
   celsiusLink.classList.remove("active");
@@ -108,6 +108,25 @@ function displayCelsius(event) {
   let temperature = document.querySelector("#current-temp");
   temperature.innerHTML = Math.round(celsiusTemp);
 }
+function showForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  let forecastHTML = `<div class="row">`;
+  let days = ["Mon", "Tue", "Wed", "Thu", "Fri"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `<div class="col-2 weekdays">
+              <div class="icons">🌨</div>
+              <span class="day"> ${day} </span>
+              <div class="temp-day-min">-2</div>
+              <div class="temp-day-max">4</div>
+            </div>`;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
 let celsiusTemp = null;
 
 let fahrenheitLink = document.querySelector("#fahrenheit-link");
@@ -117,3 +136,4 @@ let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsius);
 
 search("Vilnius");
+showForecast();
