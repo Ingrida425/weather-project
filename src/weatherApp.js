@@ -117,18 +117,24 @@ function displayCelsius(event) {
   temperature.innerHTML = Math.round(celsiusTemp);
 }
 function showForecast(response) {
-  console.log(response.data.daily);
+  let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = `<div class="row">`;
-  let days = ["Mon", "Tue", "Wed", "Thu", "Fri"];
-  days.forEach(function (day) {
+  // let days = ["Mon", "Tue", "Wed", "Thu", "Fri"];
+  forecast.forEach(function (forecastDay) {
     forecastHTML =
       forecastHTML +
       `<div class="col-2 weekdays">
-              <div class="icons">🌨</div>
-              <span class="day"> ${day} </span>
-              <div class="temp-day-min">-2</div>
-              <div class="temp-day-max">4</div>
+              <img src = "https://openweathermap.org/img/wn/${
+                forecastDay.weather[0].icon
+              }@2x.png" alt="" width="30" />
+              <span class="day"> ${forecastDay.dt} </span>
+              <div class="temp-day-min">${Math.round(
+                forecastDay.temp.min
+              )}°</div>
+              <div class="temp-day-max">${Math.round(
+                forecastDay.temp.max
+              )}°</div>
             </div>`;
   });
 
