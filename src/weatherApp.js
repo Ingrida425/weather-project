@@ -56,7 +56,14 @@ function getCurrentPosition() {
 
 let buttonLocation = document.querySelector("#current-button");
 buttonLocation.addEventListener("click", getCurrentPosition);
-
+//---------------Forecast for 5 days:-----------
+function getForecast(coordinates) {
+  console.log(coordinates);
+  let apiKey = "72ed8a85e3f275bf8313543794566f89";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&units=metric&appid=${apiKey}`;
+  console.log(apiUrl);
+  axios.get(apiUrl).then(showForecast);
+}
 //----------------------Search by user:---------------------
 function showTemperature(response) {
   document.querySelector("#current-temp").innerHTML = Math.round(
@@ -79,6 +86,7 @@ function showTemperature(response) {
   );
   let weatherDescription = document.querySelector("#description");
   weatherDescription.innerHTML = response.data.weather[0].description;
+  getForecast(response.data.coord);
 }
 function search(city) {
   let apiKey = "72ed8a85e3f275bf8313543794566f89";
@@ -108,7 +116,8 @@ function displayCelsius(event) {
   let temperature = document.querySelector("#current-temp");
   temperature.innerHTML = Math.round(celsiusTemp);
 }
-function showForecast() {
+function showForecast(response) {
+  console.log(response.data.daily);
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = `<div class="row">`;
   let days = ["Mon", "Tue", "Wed", "Thu", "Fri"];
@@ -136,4 +145,3 @@ let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsius);
 
 search("Vilnius");
-showForecast();
