@@ -47,6 +47,7 @@ img {
 .temp-city {
   font-weight: 600;
   font-size: 3rem;
+  text-align: right;
 }
 .degree {
   font-size: 1.3rem;

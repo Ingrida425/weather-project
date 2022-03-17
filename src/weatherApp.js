@@ -107,15 +107,7 @@ function getTemperature(event) {
 }
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", getTemperature);
-//------------------changing Celsius to Fahrenheit:----------------------
-function displayFahrenheit(event) {
-  event.preventDefault();
-  celsiusLink.classList.remove("active");
-  fahrenheitLink.classList.add("active");
-  let fahrenheitTemp = (celsiusTemp * 9) / 5 + 32;
-  let temperature = document.querySelector("#current-temp");
-  temperature.innerHTML = Math.round(fahrenheitTemp);
-}
+
 function displayCelsius(event) {
   event.preventDefault();
   celsiusLink.classList.add("active");
@@ -127,7 +119,7 @@ function showForecast(response) {
   let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = `<div class="row">`;
-  // let days = ["Mon", "Tue", "Wed", "Thu", "Fri"];
+
   forecast.forEach(function (forecastDay, index) {
     if (index < 6) {
       forecastHTML =
@@ -152,9 +144,6 @@ function showForecast(response) {
 }
 
 let celsiusTemp = null;
-
-let fahrenheitLink = document.querySelector("#fahrenheit-link");
-fahrenheitLink.addEventListener("click", displayFahrenheit);
 
 let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsius);
