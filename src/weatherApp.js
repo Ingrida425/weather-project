@@ -23,6 +23,13 @@ function updateTime() {
 }
 updateTime();
 
+function formatDate(timeStamp) {
+  let date = new Date(timeStamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  return days[day];
+}
+
 //-----------------Current location button:-----------------
 function showCurrentWeather(response) {
   console.log(response.data);
@@ -121,14 +128,15 @@ function showForecast(response) {
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = `<div class="row">`;
   // let days = ["Mon", "Tue", "Wed", "Thu", "Fri"];
-  forecast.forEach(function (forecastDay) {
-    forecastHTML =
-      forecastHTML +
-      `<div class="col-2 weekdays">
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 6) {
+      forecastHTML =
+        forecastHTML +
+        `<div class="col-2 weekdays">
               <img src = "https://openweathermap.org/img/wn/${
                 forecastDay.weather[0].icon
               }@2x.png" alt="" width="30" />
-              <span class="day"> ${forecastDay.dt} </span>
+              <span class="day">${formatDate(forecastDay.dt)}</span>
               <div class="temp-day-min">${Math.round(
                 forecastDay.temp.min
               )}°</div>
@@ -136,6 +144,7 @@ function showForecast(response) {
                 forecastDay.temp.max
               )}°</div>
             </div>`;
+    }
   });
 
   forecastHTML = forecastHTML + `</div>`;

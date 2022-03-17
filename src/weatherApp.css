@@ -79,3 +79,7 @@ img {
   text-transform: capitalize;
   color: purple;
 }
+.row {
+  --bs-gutter-x: 2rem;
+  --bs-gutter-y: 0;
+}
